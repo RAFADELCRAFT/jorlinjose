@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Jorling Seguidores 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Fondo 3D -->
+    <div class="electric-bg">
+        <div class="lightning-bolt bolt-1"></div>
+        <div class="lightning-bolt bolt-2"></div>
+        <div class="lightning-bolt bolt-3"></div>
+        <div class="electric-particles"></div>
+    </div>
+
+    <!-- Header Dashboard -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>JORLING DASHBOARD</span>
+            </div>
+            
+            <!-- Saldo del usuario -->
+            <div class="user-balance">
+                <i class="fas fa-wallet"></i>
+                <span>Saldo: $<span id="userBalance">0.00</span></span>
+            </div>
+
+            <!-- Menú hamburguesa -->
+            <div class="hamburger-menu" onclick="toggleSidebar()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-user"></i> <span id="username">Usuario</span></h3>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" onclick="showSection('nueva-orden')">
+                <i class="fas fa-plus-circle"></i> Nueva Orden
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('historial')">
+                <i class="fas fa-history"></i> Historial de Pedidos
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('añadir-fondos')">
+                <i class="fas fa-credit-card"></i> Añadir Fondos
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('reembolsos')">
+                <i class="fas fa-undo"></i> Reembolsos
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('servicios')">
+                <i class="fas fa-cogs"></i> Servicios
+            </a>
+            <a href="#" class="nav-item logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </a>
+        </nav>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="dashboard-main">
+        <!-- Nueva Orden -->
+        <section id="nueva-orden" class="dashboard-section active">
+            <h2><i class="fas fa-plus-circle"></i> Nueva Orden</h2>
+            
+            <div class="order-form-container">
+                <form id="orderForm" class="order-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-share-alt"></i> Plataforma</label>
+                            <select id="platform" required>
+                                <option value="">Seleccionar plataforma</option>
+                                <option value="instagram">📸 Instagram</option>
+                                <option value="tiktok">🎵 TikTok</option>
+                                <option value="youtube">📺 YouTube</option>
+                                <option value="facebook">📘 Facebook</option>
+                                <option value="twitter">🐦 Twitter/X</option>
+                                <option value="whatsapp">💬 WhatsApp</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-cog"></i> Servicio</label>
+                            <select id="service" required>
+                                <option value="">Seleccionar servicio</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-hashtag"></i> Cantidad</label>
+                            <input type="number" id="quantity" min="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-dollar-sign"></i> Precio</label>
+                            <input type="text" id="price" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-link"></i> URL/Usuario</label>
+                        <input type="text" id="targetUrl" placeholder="https://instagram.com/usuario o @usuario" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Realizar Pedido
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Historial de Pedidos -->
+        <section id="historial" class="dashboard-section">
+            <h2><i class="fas fa-history"></i> Historial de Pedidos</h2>
+            
+            <div class="orders-container">
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Plataforma</th>
+                                <th>Servicio</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- Los pedidos se cargarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Añadir Fondos -->
+        <section id="añadir-fondos" class="dashboard-section">
+            <h2><i class="fas fa-credit-card"></i> Añadir Fondos</h2>
+            
+            <div class="payment-methods">
+                <div class="payment-card">
+                    <i class="fab fa-paypal"></i>
+                    <h3>PayPal</h3>
+                    <p>Pago seguro y rápido</p>
+                    <button class="btn-primary" onclick="contactSupport('paypal')">Contactar Soporte</button>
+                </div>
+                <div class="payment-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Tarjeta de Crédito</h3>
+                    <p>Visa, MasterCard, American Express</p>
+                    <button class="btn-primary" onclick="contactSupport('card')">Contactar Soporte</button>
+                </div>
+                <div class="payment-card">
+                    <i class="fab fa-bitcoin"></i>
+                    <h3>Criptomonedas</h3>
+                    <p>Bitcoin, Ethereum, USDT</p>
+                    <button class="btn-primary" onclick="contactSupport('crypto')">Contactar Soporte</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reembolsos -->
+        <section id="reembolsos" class="dashboard-section">
+            <h2><i class="fas fa-undo"></i> Solicitar Reembolso</h2>
+            
+            <div class="refund-form-container">
+                <form id="refundForm" class="refund-form">
+                    <div class="form-group">
+                        <label><i class="fas fa-receipt"></i> ID del Pedido</label>
+                        <input type="text" id="refundOrderId" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> Motivo del Reembolso</label>
+                        <textarea id="refundReason" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Solicitar Reembolso
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="dashboard-section">
+            <h2><i class="fas fa-cogs"></i> Nuestros Servicios</h2>
+            
+            <div class="services-overview">
+                <div class="service-category">
+                    <h3><i class="fab fa-instagram"></i> Instagram</h3>
+                    <ul>
+                        <li>Seguidores reales y activos</li>
+                        <li>Likes en publicaciones</li>
+                        <li>Visualizaciones en stories</li>
+                        <li>Comentarios personalizados</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3><i class="fab fa-tiktok"></i> TikTok</h3>
+                    <ul>
+                        <li>Seguidores de calidad</li>
+                        <li>Visualizaciones en videos</li>
+                        <li>Likes y comentarios</li>
+                        <li>Shares y guardados</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3><i class="fab fa-youtube"></i> YouTube</h3>
+                    <ul>
+                        <li>Suscriptores reales</li>
+                        <li>Visualizaciones de videos</li>
+                        <li>Likes y comentarios</li>
+                        <li>Tiempo de reproducción</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

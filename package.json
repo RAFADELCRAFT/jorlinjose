@@ -1,0 +1,26 @@
+{
+  "name": "jorling-seguidores-2025",
+  "version": "1.0.0",
+  "description": "Plataforma de servicios de redes sociales con tecnología 2025",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "admin": "python admin_panel.py",
+    "balance": "python balance_manager.py",
+    "process": "python order_processor.py"
+  },
+  "keywords": ["social-media", "followers", "instagram", "tiktok", "youtube", "facebook", "twitter", "whatsapp"],
+  "author": "Jorling Seguidores",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jorling/seguidores-2025.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jorling/seguidores-2025/issues"
+  },
+  "homepage": "https://jorling-seguidores.com"
+}

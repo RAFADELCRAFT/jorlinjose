@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorling Seguidores 2025 - Última Tecnología</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo 3D con rayos eléctricos -->
+    <div class="electric-bg">
+        <div class="lightning-bolt bolt-1"></div>
+        <div class="lightning-bolt bolt-2"></div>
+        <div class="lightning-bolt bolt-3"></div>
+        <div class="electric-particles"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>JORLING SEGUIDORES</span>
+                <small>2025 ÚLTIMA TECNOLOGÍA</small>
+            </div>
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#estadisticas" class="nav-link">Estadísticas</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="electric-text">IMPULSA TU PRESENCIA</span>
+                <span class="neon-text">CON TECNOLOGÍA 2025</span>
+            </h1>
+            <p class="hero-subtitle">Servicios garantizados 100% • Entrega inmediata • Soporte 24/7</p>
+            
+            <!-- Estadísticas en tiempo real -->
+            <div class="live-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="liveViews">2,847,392</div>
+                    <div class="stat-label">Vistas entregadas hoy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="liveFollowers">15,234</div>
+                    <div class="stat-label">Usuarios recibiendo seguidores</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="liveOrders">1,847</div>
+                    <div class="stat-label">Órdenes procesándose</div>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="showLoginModal()">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </button>
+                <button class="btn-secondary" onclick="showRegisterModal()">
+                    <i class="fas fa-user-plus"></i> Registrarse
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-rocket"></i>
+                SERVICIOS GARANTIZADOS 100%
+            </h2>
+            
+            <div class="services-grid">
+                <!-- Instagram -->
+                <div class="service-card" data-platform="instagram">
+                    <div class="service-header">
+                        <i class="fab fa-instagram"></i>
+                        <h3>Instagram</h3>
+                        <span class="guarantee-badge">100% GARANTIZADO</span>
+                    </div>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <span class="option-name">1K Seguidores</span>
+                            <span class="option-price">$12.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">5K Seguidores</span>
+                            <span class="option-price">$49.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">10K Likes</span>
+                            <span class="option-price">$8.99</span>
+                        </div>
+                    </div>
+                    <button class="service-btn" onclick="requireLogin()">Ordenar Ahora</button>
+                </div>
+
+                <!-- TikTok -->
+                <div class="service-card" data-platform="tiktok">
+                    <div class="service-header">
+                        <i class="fab fa-tiktok"></i>
+                        <h3>TikTok</h3>
+                        <span class="guarantee-badge">100% GARANTIZADO</span>
+                    </div>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <span class="option-name">1K Seguidores</span>
+                            <span class="option-price">$10.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">100K Vistas</span>
+                            <span class="option-price">$15.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">10K Likes</span>
+                            <span class="option-price">$7.99</span>
+                        </div>
+                    </div>
+                    <button class="service-btn" onclick="requireLogin()">Ordenar Ahora</button>
+                </div>
+
+                <!-- YouTube -->
+                <div class="service-card" data-platform="youtube">
+                    <div class="service-header">
+                        <i class="fab fa-youtube"></i>
+                        <h3>YouTube</h3>
+                        <span class="guarantee-badge">100% GARANTIZADO</span>
+                    </div>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <span class="option-name">1K Suscriptores</span>
+                            <span class="option-price">$24.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">50K Vistas</span>
+                            <span class="option-price">$19.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">1K Likes</span>
+                            <span class="option-price">$12.99</span>
+                        </div>
+                    </div>
+                    <button class="service-btn" onclick="requireLogin()">Ordenar Ahora</button>
+                </div>
+
+                <!-- Facebook -->
+                <div class="service-card" data-platform="facebook">
+                    <div class="service-header">
+                        <i class="fab fa-facebook"></i>
+                        <h3>Facebook</h3>
+                        <span class="guarantee-badge">100% GARANTIZADO</span>
+                    </div>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <span class="option-name">1K Seguidores</span>
+                            <span class="option-price">$14.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">5K Likes</span>
+                            <span class="option-price">$9.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">10K Vistas</span>
+                            <span class="option-price">$11.99</span>
+                        </div>
+                    </div>
+                    <button class="service-btn" onclick="requireLogin()">Ordenar Ahora</button>
+                </div>
+
+                <!-- Twitter -->
+                <div class="service-card" data-platform="twitter">
+                    <div class="service-header">
+                        <i class="fab fa-twitter"></i>
+                        <h3>Twitter/X</h3>
+                        <span class="guarantee-badge">100% GARANTIZADO</span>
+                    </div>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <span class="option-name">1K Seguidores</span>
+                            <span class="option-price">$16.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">5K Likes</span>
+                            <span class="option-price">$8.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">10K Retweets</span>
+                            <span class="option-price">$13.99</span>
+                        </div>
+                    </div>
+                    <button class="service-btn" onclick="requireLogin()">Ordenar Ahora</button>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="service-card" data-platform="whatsapp">
+                    <div class="service-header">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <span class="guarantee-badge">100% GARANTIZADO</span>
+                    </div>
+                    <div class="service-options">
+                        <div class="service-option">
+                            <span class="option-name">500 Miembros</span>
+                            <span class="option-price">$18.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">1K Miembros</span>
+                            <span class="option-price">$34.99</span>
+                        </div>
+                        <div class="service-option">
+                            <span class="option-name">Grupos Premium</span>
+                            <span class="option-price">$25.99</span>
+                        </div>
+                    </div>
+                    <button class="service-btn" onclick="requireLogin()">Ordenar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas Section -->
+    <section id="estadisticas" class="stats-section">
+        <div class="container">
+            <h2 class="section-title">ESTADÍSTICAS EN TIEMPO REAL</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">47,892</div>
+                    <div class="stat-label">Usuarios Activos</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-number">2,847,392</div>
+                    <div class="stat-label">Servicios Entregados</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Tiempo de Actividad</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Calificación</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Usuario</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                    <button type="button" class="btn-link" onclick="showRegisterModal()">¿No tienes cuenta? Regístrate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Crear Cuenta</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nombre de Usuario</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> Confirmar Contraseña</label>
+                    <input type="password" id="regConfirmPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Crear Cuenta</button>
+                    <button type="button" class="btn-link" onclick="showLoginModal()">¿Ya tienes cuenta? Inicia sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">SOPORTE 24/7</h2>
+            <div class="contact-grid">
+                <a href="https://wa.me/573234135603" class="contact-card whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp Principal</h3>
+                    <p>Respuesta inmediata</p>
+                </a>
+                <a href="https://wa.me/573150233701" class="contact-card whatsapp-alt" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp Alternativo</h3>
+                    <p>Soporte técnico</p>
+                </a>
+                <a href="https://t.me/Jorlingseguidores" class="contact-card telegram" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                    <h3>Telegram</h3>
+                    <p>Unico oficial</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-bolt"></i> JORLING SEGUIDORES</h3>
+                    <p>2025 ÚLTIMA TECNOLOGÍA</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jorling Seguidores - Última Tecnología. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
